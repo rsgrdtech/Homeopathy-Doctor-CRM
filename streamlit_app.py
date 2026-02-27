@@ -31,7 +31,7 @@ st.markdown("""
     .remedy-name { font-weight: bold; font-size: 14px; margin-bottom: 2px; }
     .remedy-meta { font-family: monospace; font-size: 10px; color: #6b7280; }
     </style>
-    """, unsafe_allow_value=True)
+    """, unsafe_allow_html=True)
 
 # --- STATE MANAGEMENT ---
 if 'current_patient' not in st.session_state:
@@ -153,7 +153,7 @@ with col_tools:
                         <div class="remedy-name">{row['Remedy Name']}</div>
                         <div class="remedy-meta">{row['Potency']} • BOX {row['BOX Number']}</div>
                     </div>
-                """, unsafe_allow_value=True)
+                """, unsafe_allow_html=True)
                 
                 if is_avail:
                     if st.button(f"Add {row['Remedy Name']}", key=f"btn_{row['Remedy Name']}"):
